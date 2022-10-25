@@ -16,7 +16,7 @@ class ManufacturersList extends React.Component {
     }
 
     async deletemanufacturer(manufacturers) {
-        const deleteURL = "http://localhost:8100/api/manufacturers/${manufacturers.id}"
+        const deleteURL = "http://localhost:8100/api/manufacturers/${manufacturers.id}/"
         const fetchConfig = {
             method: "delete"
         }
@@ -25,8 +25,9 @@ class ManufacturersList extends React.Component {
         const id = this.state.manufacturers.indexOf(manufacturers)
         const updated_manufacturers = [...this.state.manufacturers]
         updated_manufacturers.splice(id, 1)
-        this.setState({ manufacturers: updated_manufacturers })
+        this.setState({ manufacturers: updated_manufacturers})
     }
+
 
     render() {
         return (

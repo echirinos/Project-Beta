@@ -5,7 +5,7 @@ function Nav() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-success">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/" aria-current="page">
-          CarCar
+          CarBook
         </Link>
         <button
           className="navbar-toggler"
