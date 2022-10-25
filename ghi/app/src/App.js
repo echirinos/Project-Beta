@@ -7,6 +7,12 @@ import InventoryList from './Inventory/InventoryList';
 import InventoryForm from './Inventory/InventoryForm';
 import VehicleModelForm from './VehicleModels/VehicleModelForm';
 import VehicleModelsList from './VehicleModels/VehicleModelsList';
+import CreateSalesperson from './Sales/CreateSalesperson';
+import SalesHistoryList from './Sales/ListSaleHistory';
+import SalesList from './Sales/SalesList';
+import CreateSalesRecord from './Sales/CreateSaleRecord';
+import CreateCustomer from './Sales/CreateCustomer';
+
 
 
 
@@ -23,6 +29,11 @@ function App() {
           <Route path="/inventory/new" element={<InventoryForm />} />
           <Route path="/vehicle-models" element={<VehicleModelsList />} />
           <Route path="/vehicle-models/new/" element={<VehicleModelForm />} />
+          <Route path="/salesperson" element={<CreateSalesperson />} />
+          <Route path="/salesrecords/new" element={<CreateSalesRecord />} />
+          <Route path="/salesperson/history" element={<SalesHistoryList />} />
+          <Route path="/salesrecords" element={<SalesList />} />
+          <Route path="/customer" element={<CreateCustomer />} />
         </Routes>
       </div>
     </BrowserRouter>
