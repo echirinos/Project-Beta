@@ -17,7 +17,6 @@ class ServiceAppointment(models.Model):
     )
     reason = models.CharField(max_length=500)
     isCompleted = models.BooleanField(default=False)
-    # isVIP is set on create. See service_rest/api_views.py:99
     isVIP = models.BooleanField()
 
 
