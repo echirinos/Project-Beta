@@ -1,59 +1,60 @@
 import React from 'react';
 
 class VehicleModelForm extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            name: "",
-            picture_url: "",
-            manufacturer_id: "",
-            manufacturers: [],
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      picture_url: "",
+      manufacturer_id: "",
+      manufacturers: [],
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  async componentDidMount() {
+    const url = 'http://localhost:8100/api/manufacturers/';
+    const response = await fetch(url);
+    if (response.ok) {
+        const data = await response.json();
+        this.setState({ manufacturers: data.manufacturers});
     }
+  }
 
-    async componentDidMount() {
-        const url = 'http://localhost:8100/api/manufacturers/';
-        const response = await fetch(url);
-        if (response.ok) {
-            const data = await response.json();
-            this.setState({ manufacturers: data.manufacturers });
-        }
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  async handleSubmit(e) {
+    e.preventDefault();
+
+    const data = {...this.state};
+    delete data.manufacturers;
+
+    const URL = 'http://localhost:8100/api/models/';
+    const fetchConfig = {
+      method: "post",
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    };
+
+    const response = await fetch(URL, fetchConfig);
+    if (response.ok) {
+      const cleared = {
+        name: "",
+        picture_url: "",
+        manufacturer_id: "",
+      };
+
+      this.setState(cleared);
     }
+  }
 
-    handleChange(e) {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-
-    async handleSubmit(e) {
-        e.preventDefault();
-
-        const data = { ...this.state };
-        delete data.manufacturers;
-
-        const URL = 'http://localhost:8100/api/models/';
-        const fetchConfig = {
-            method: "post",
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        };
-
-        const response = await fetch(URL, fetchConfig);
-        if (response.ok) {
-            const cleared = {
-                name: "",
-                picture_url: "",
-                manufacturer_id: "",
-            };
-
-            this.setState(cleared);
-        }
-    }
 
     render() {
         return (

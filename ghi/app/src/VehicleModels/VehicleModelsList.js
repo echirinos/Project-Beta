@@ -1,36 +1,37 @@
 import React from 'react';
 
 class VehicleModelsList extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            models: [],
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      models: [],
     }
+  }
 
-    async componentDidMount() {
-        const url = "http://localhost:8100/api/models/";
-        const response = await fetch(url);
+  async componentDidMount() {
+    const url = "http://localhost:8100/api/models/";
+    const response = await fetch(url);
 
-        if (response.ok) {
-            const data = await response.json();
-            this.setState({ models: data.models })
-        }
+    if (response.ok) {
+      const data = await response.json();
+      this.setState({models: data.models})
     }
+  }
 
-    async deleteModel(modelID, modelName) {
-        const isConfirmed = window.confirm(`Delete this ${modelName}?`)
-        if (isConfirmed) {
-            const url = `http://localhost:8100/api/models/${modelID}/`;
-            const fetchConfig = { method: "delete" };
-            const response = await fetch(url, fetchConfig);
+  async deleteModel(modelID, modelName) {
+    const isConfirmed = window.confirm(`Delete this ${modelName}?`)
+    if (isConfirmed) {
+      const url = `http://localhost:8100/api/models/${modelID}/`;
+      const fetchConfig = { method: "delete" };
+      const response = await fetch(url, fetchConfig);
 
-            const filteredModels = this.state.models.filter(model => model.id !== modelID)
-            if (response.ok) {
-                this.setState({ models: filteredModels })
-            }
-        }
+      const filteredModels = this.state.models.filter(model => model.id !== modelID)
+      if (response.ok) {
+        this.setState({models: filteredModels})
+      }
     }
+  }
+
 
     render() {
         return (
