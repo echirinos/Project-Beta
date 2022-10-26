@@ -1,6 +1,5 @@
 import React from "react";
 
-
 //relatively the same code as CreatesalesPerson
 
 class CreateCustomer extends React.Component {
@@ -14,7 +13,8 @@ class CreateCustomer extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+//since we want to be a mutable state is in React this is typically kept in the state property of components, 
+//and only updated with setState().
     async componentDidMount() {
         const url = 'http://localhost:8090/api/customers/'
         const response = await fetch(url)

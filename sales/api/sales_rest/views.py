@@ -46,6 +46,8 @@ class SalesRecordEncoder(ModelEncoder):
         "customer": PotentialCustomerEncoder()
     }
 
+
+
 @require_http_methods(["GET", "POST"])
 def api_list_salesrecords(request):
     if request.method == "GET":
@@ -69,6 +71,7 @@ def api_list_salesrecords(request):
             customer = content["customer"]
             assgined_customer = PotentialCustomer.objects.get(phone=customer)
             content["customer"] = assgined_customer
+
         except AutomobilesVO.DoesNotExist:
             return JsonResponse(
                 {"message": "Automobile does not exist"},
@@ -91,6 +94,7 @@ def api_list_salesrecords(request):
             encoder=SalesRecordEncoder,
             safe=False,
         )
+
 
 @require_http_methods(["DELETE", "GET"])
 def api_show_salesrecord(request, pk):
@@ -134,6 +138,7 @@ def api_show_salesperson(request, pk):
     else:
         count, _ = Salesperson.objects.filter(id=pk).delete()
         return JsonResponse({"deleted": count > 0})
+
 
 @require_http_methods(["GET", "POST"])
 def api_list_potentialcustomers(request):
