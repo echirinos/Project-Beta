@@ -3,24 +3,24 @@
 
 
 **An Interactive web application that Automobile Dealership's could use to manage inventory, record sales,
-record services, add potential customers, add technicians, and create appointments.**
+record services, add potential customers, add technicians, and create appointments. Specifically, this is the second big project from our HackReactor bootcamp.**
 
 ## Getting Started/ Installing
 
-1. Open your terminal and go into your preferred directory 
+1. Open your terminal and go into your preferred directory
 
 ```
 cd <DIRECTORYNAME>
 ```
 
-2. go to [this link](https://gitlab.com/tannerhalsey/project-beta.git) and click the blue clone
-button to copy with HTTPS
+2. go to this[link](https://gitlab.com/tannerhalsey/project-beta.git) and click the blue clone
+button to copy with HTTPS. Then go to your terminal and type in the command below.
 
 ```
 git clone https://gitlab.com/tannerhalsey/project-beta.git
 ```
 
-3. Make sure Docker is [installed](https://www.docker.com/)
+3. Make sure [Docker](https://www.docker.com/) is installed.
 
 4.  CD into your new project-beta directory
 ```
@@ -28,23 +28,21 @@ cd project-beta
 ```
 
 5.  Run these commands in the following order in your terminal:
-``` 
+```
 docker volume create beta-data
 docker-compose build
 docker-compose up
 ```
 
-6.  Make sure your docker desktop looks like [this](https://drive.google.com/file/d/16Mf0BLF5FZMxVGXA-rUkZNqU9ok-igFL/view) if not all your docker containers are running
-make sure you're using the most recent version of Python, and refer back to the error message.
+6.  Make sure your docker desktop looks like [this](https://drive.google.com/file/d/16Mf0BLF5FZMxVGXA-rUkZNqU9ok-igFL/view). If not all your docker containers are running make sure you're using the most recent version of Python, and refer back to the error message. Or you can specifically view which container is giving you an issue and further diagnose inside the container's terminal.
 
-7. Go to your browser and go to [localhost:3000](localhost:3000) 
+7. Go to your browser and go to [localhost:3000](localhost:3000)
 
-8. Congratulations you have successfully booted up CarBook, enjoy! 
+8. Congratulations you have successfully booted up CarBook, enjoy!
 
 ### Prerequisites
 
-What you need to install the software and how to install them
-[Python](https://www.python.org/downloads/)
+What you need to is ensure you have an IDE (VSCode), Python, and Docker (below is the command to install docker) installed. the software and how to install them. You can also go to the official website of each of those and download it there.
 
 
 ```
@@ -53,10 +51,10 @@ pip install docker
 
 ## Deployment
 
-**If a page isn't loading for you, make sure you run   `pip install -r requirements.txt`   for that specific directory in your terminal**
+**If a page isn't loading for you, make sure you run `pip install -r requirements.txt` for that specific directory in your terminal**
 
-These are additional things you made need: 
-*IDE
+These are additional things you made need:
+*IDE (VSCode recommended)
 *Python
 *Docker
 
@@ -80,7 +78,7 @@ See also the list of [contributors](https://gitlab.com/tannerhalsey/project-beta
 
 ## License
 
-This project is licensed under the Tanner&Esteban License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Tanner&Esteban License
 
 ## Acknowledgments
 
@@ -90,7 +88,7 @@ ______________________________________________________________
 
 ## Design
 
-Our [Excalidraw](https://drive.google.com/file/d/1URAbxlryy4x5LMNdytwI2kfxbiUaDU0l/view?usp=sharing) 
+Our [Excalidraw](https://drive.google.com/file/d/1URAbxlryy4x5LMNdytwI2kfxbiUaDU0l/view?usp=sharing)
 shows the DOM and aggregate/aggregate root.
 
 ## Service microservice
@@ -135,10 +133,9 @@ Models--
 
 *Autombile* will be **Value Object** since used in other apps.
 
-SalesPerson model contains employee w/ charfield and number in a positive big interger field. 
-Employee represents the name of employee with unique set to true to prevent duplicates. 
+SalesPerson model contains employee w/ charfield and number in a positive big interger field.
+Employee represents the name of employee with unique set to true to prevent duplicates.
 employee_id would be the id associated with the employee.
 The AutomobileVO model is how my sales microservice will be *integrated* with the inventory microserice. A poller is used to obtain the **vin number from Automobile model in inventory**. AutomobileVO is imported into the poller and used in the get_automobiles function to poll for the data in Automobile in the inventory microservice. AutomobileVO includes the import_href, color, year, vin, and a sold property that will be used in the view to indicate if an automobile was sold. If sold is True, then the automobile cannot be sold again and will *not* be available for another sale record.
 The Customer model has name for the customer name in a charfield and phone as the customer's phone number as a charfield that will also be a unique identifier for a customer as every phone number is unique to a customer.
 The Sales model has price as a float field to enter in a dolar amount. The Sales model has foreign keys to AutomobileVO to get the vin, Customer to get the customer name, and SalesPerson to obtain the Salesperson.
-
