@@ -139,3 +139,23 @@ employee_id would be the id associated with the employee.
 The AutomobileVO model is how my sales microservice will be *integrated* with the inventory microserice. A poller is used to obtain the **vin number from Automobile model in inventory**. AutomobileVO is imported into the poller and used in the get_automobiles function to poll for the data in Automobile in the inventory microservice. AutomobileVO includes the import_href, color, year, vin, and a sold property that will be used in the view to indicate if an automobile was sold. If sold is True, then the automobile cannot be sold again and will *not* be available for another sale record.
 The Customer model has name for the customer name in a charfield and phone as the customer's phone number as a charfield that will also be a unique identifier for a customer as every phone number is unique to a customer.
 The Sales model has price as a float field to enter in a dolar amount. The Sales model has foreign keys to AutomobileVO to get the vin, Customer to get the customer name, and SalesPerson to obtain the Salesperson.
+
+
+views______
+
+##need 
+list_salesrecords(GET POST)
+
+show_salesrecord(DELETE GET)
+    unless
+        no car
+        no salesperson
+        no customer
+list_salesperson(GET POST)
+show_salesperson(DELETE GET)
+list_customer(GET POST)
+show_potential(DELETE GET)
+???
+
+TO FUTURE TANNER ADD DATE PROPERTY TO SALES RECORD TO LIST DATE CAR SOLD
+CHANGE FAVICON ICON

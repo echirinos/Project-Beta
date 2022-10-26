@@ -5,7 +5,8 @@ from django.views.decorators.http import require_http_methods
 from .models import AutomobilesVO, SalesRecord, Salesperson, PotentialCustomer
 
 # Create your views here.
-
+# Notes regarding views/models in this file can be found in 
+# the README file, enjoy(:
 class AutomobilesVOEncoder(ModelEncoder):
     model = AutomobilesVO
     properties = [
@@ -71,22 +72,21 @@ def api_list_salesrecords(request):
             customer = content["customer"]
             assgined_customer = PotentialCustomer.objects.get(phone=customer)
             content["customer"] = assgined_customer
-
         except AutomobilesVO.DoesNotExist:
             return JsonResponse(
                 {"message": "Automobile does not exist"},
                 status=400
             )
-        except Salesperson.DoesNotExist:
-            return JsonResponse(
-                {"message": "Salesperson does not exist"},
-                status=400
-            )
-        except PotentialCustomer.DoesNotExist:
-            return JsonResponse(
-                {"message": "Customer does not exist"},
-                status=400
-            )
+        # except Salesperson.DoesNotExist:
+        #     return JsonResponse(
+        #         {"message": "Salesperson does not exist"},
+        #         status=400
+        #     )
+        # except PotentialCustomer.DoesNotExist:
+        #     return JsonResponse(
+        #         {"message": "Customer does not exist"},
+        #         status=400
+        #     )
 
         salesrecords = SalesRecord.objects.create(**content)
         return JsonResponse(
@@ -94,6 +94,8 @@ def api_list_salesrecords(request):
             encoder=SalesRecordEncoder,
             safe=False,
         )
+
+
 
 
 @require_http_methods(["DELETE", "GET"])

@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+# Notes regarding views/models in this file can be found in 
+# the README file, enjoy(:
 
 class AutomobilesVO(models.Model):
     import_href = models.CharField(max_length=200, unique=True)

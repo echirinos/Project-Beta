@@ -104,34 +104,6 @@ function Nav() {
                 </li>
               </ul>
             </li>
-            {/* Sales record dropdown links */}
-            <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="/salesrecords"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Sales Records
-              </Link>
-              <ul
-                className="dropdown-menu dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li className="nav-item">
-                  <Link className="dropdown-item" to="/salesrecords">
-                    List all Sales Records
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="dropdown-item" to="/salesrecords/new">
-                    Create Sales Record
-                  </Link>
-                </li>
-              </ul>
-            </li>
             {/* Salesperson dropdown links */}
             <li className="nav-item dropdown">
               <Link
@@ -142,7 +114,7 @@ function Nav() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Salespeople
+                Saleseople
               </Link>
               <ul
                 className="dropdown-menu dropdown-menu"
@@ -156,6 +128,16 @@ function Nav() {
                 <li className="nav-item">
                   <Link className="dropdown-item" to="/salesperson/history">
                     Salesperson History
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="dropdown-item" to="/salesrecords">
+                    List all Sales Records
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="dropdown-item" to="/salesrecords/new">
+                    Create Sales Record
                   </Link>
                 </li>
               </ul>
