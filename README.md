@@ -13,7 +13,7 @@ record services, add potential customers, add technicians, and create appointmen
 cd <DIRECTORYNAME>
 ```
 
-2. go to this[link](https://gitlab.com/tannerhalsey/project-beta.git) and click the blue clone
+2. Go to this [link](https://gitlab.com/tannerhalsey/project-beta.git) and click the blue clone
 button to copy with HTTPS. Then go to your terminal and type in the command below.
 
 ```

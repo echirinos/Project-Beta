@@ -1,5 +1,15 @@
 import React from 'react';
+/*
+You need to show a list of scheduled appointments that contain the details collected in the form:
+VIN, customer name, date and time of the appointment, the assigned technician's name, and the reason for the service.
+If the VIN is for an automobile that was at one time in the inventory, then the automobile was purchased from the dealership. The list of scheduled appointments should show that the automobile was purchased from the dealership so that the concierge can give that customer "VIP treatment".
 
+Each appointment in the list of appointments should have a button that allows a service concierge to
+cancel the appointment, or to show that the service appointment has been finished. When a service appointment
+is canceled or finished, it should no longer show up in the list of appointments.
+
+You need to create a link in the navbar to get to the list of appointments.
+*/
 class AppointmentList extends React.Component {
     constructor(props) {
         super(props);

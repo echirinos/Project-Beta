@@ -1,11 +1,11 @@
 from django.db import models
 
-
+#creating technician model that will connect to services appointment
 class Technician(models.Model):
     name = models.CharField(max_length=100)
     employee_number = models.PositiveSmallIntegerField(unique=True)
 
-
+#creating service appointment model that will connect to services
 class ServiceAppointment(models.Model):
     vin = models.CharField(max_length=17)
     customer_name = models.CharField(max_length=100)
@@ -19,7 +19,7 @@ class ServiceAppointment(models.Model):
     isCompleted = models.BooleanField(default=False)
     isVIP = models.BooleanField()
 
-
+#creating automobile vo
 class AutomobileVO(models.Model):
     import_href = models.CharField(max_length=200, unique=True)
     vin = models.CharField(max_length=17, unique=True)

@@ -1,5 +1,12 @@
 import React from 'react';
 
+/*
+You need to create a form that allows a person to enter an automotive technician's name
+and employee number. When the form is submitted, the automotive technician is created in the application.
+
+You need to create a link in the navbar to get to the Enter a technician form.
+*/
+
 class TechnicianForm extends React.Component {
     constructor() {
         super();

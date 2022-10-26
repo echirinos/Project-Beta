@@ -1,5 +1,13 @@
 import React from 'react';
+/*
+You need to show a list of the service appointments for a specific VIN.
+To do this, create a page that has an input that allows someone to type in the VIN.
+On form submission, fetch all of the service appointments for an automobile with the VIN in the input.
+Then, show that list of service appointments to include the customer name, date and time of the appointment,
+the assigned technician's name, and the reason for the service.
 
+You need to create a link in the navbar to get to the page that shows the service history for a specific VIN.
+*/
 function TableStatusMessage(props) {
     const { displayAppointmentsLength, hasSearched } = props;
 
