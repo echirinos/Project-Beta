@@ -3,7 +3,7 @@ import React from "react";
 class InventoryList extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { inventory: [] }
+        this.state = {inventory: []}
         this.deleteinventory = this.deleteinventory.bind(this);
     }
 
@@ -11,12 +11,12 @@ class InventoryList extends React.Component {
         const response = await fetch('http://localhost:8100/api/automobiles/')
         if (response.ok) {
             const data = await response.json()
-            this.setState({ inventory: data.autos })
+            this.setState({ inventory: data.autos})
         }
     }
 
     async deleteinventory(inventory) {
-        const deleteURL = "http://localhost:8100/api/automobiles/${automobiles.VIN}"
+        const deleteURL = `http://localhost:8100/api/automobiles/${inventory.VIN}/`
         const fetchConfig = {
             method: "delete"
         }
@@ -25,8 +25,9 @@ class InventoryList extends React.Component {
         const id = this.state.inventory.indexOf(inventory)
         const updated_inventory = [...this.state.inventory]
         updated_inventory.splice(id, 1)
-        this.setState({ inventory: updated_inventory })
+        this.setState({ inventory: updated_inventory})
     }
+
 
     render() {
         return (
