@@ -20,34 +20,6 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {/* Vehicle model dropdown links */}
-            <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="/"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Vehicle Models
-              </Link>
-              <ul
-                className="dropdown-menu dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li className="nav-item">
-                  <Link className="dropdown-item" to="/vehicle-models">
-                    List all Vehicle Models
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="dropdown-item" to="/vehicle-models/new">
-                    Add Vehicle Model
-                  </Link>
-                </li>
-              </ul>
-            </li>
             {/* Manufacturer dropdown links */}
             <li className="nav-item dropdown">
               <Link
@@ -66,12 +38,40 @@ function Nav() {
               >
                 <li className="nav-item">
                   <Link className="dropdown-item" to="/manufacturers">
-                    List all Manufacturers
+                    List Manufacturers
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="dropdown-item" to="/manufacturers/new">
-                    Add Manufacturer
+                    Add a Manufacturer
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            {/* Vehicle model dropdown links */}
+            <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="/"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Vehicle Models
+              </Link>
+              <ul
+                className="dropdown-menu dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li className="nav-item">
+                  <Link className="dropdown-item" to="/vehicle-models">
+                    List Vehicle Models
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="dropdown-item" to="/vehicle-models/new">
+                    Add a Vehicle Model
                   </Link>
                 </li>
               </ul>
@@ -104,6 +104,44 @@ function Nav() {
                 </li>
               </ul>
             </li>
+            {/* Appointment dropdown links */}
+            <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="/appointments/"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Automobile Service
+              </Link>
+              <ul
+                className="dropdown-menu dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+              <li className="nav-item">
+                <Link className="dropdown-item" to="/technician">
+                Add Technician
+                 </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="dropdown-item" to="/appointments/new">
+                    Create Service Appointment
+                  </Link>
+                </li>                
+                <li className="nav-item">
+                  <Link className="dropdown-item" to="/appointments">
+                    List Service Appointments
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="dropdown-item" to="/appointments/history">
+                    Service History
+                  </Link>
+                </li>
+              </ul>
+            </li>
             {/* Salesperson dropdown links */}
             <li className="nav-item dropdown">
               <Link
@@ -114,7 +152,7 @@ function Nav() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Saleseople
+                Salespeople
               </Link>
               <ul
                 className="dropdown-menu dropdown-menu"
@@ -126,64 +164,25 @@ function Nav() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="dropdown-item" to="/salesperson/history">
-                    Salesperson History
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="dropdown-item" to="/salesrecords">
-                    List all Sales Records
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link className="dropdown-item" to="/salesrecords/new">
                     Create Sales Record
                   </Link>
                 </li>
-              </ul>
-            </li>
-
-            {/* Appointment dropdown links */}
-            <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="/appointments/"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Appointments
-              </Link>
-              <ul
-                className="dropdown-menu dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
                 <li className="nav-item">
-                  <Link className="dropdown-item" to="/appointments">
-                    List Appointments
+                  <Link className="dropdown-item" to="/salesrecords">
+                    List Sales Records
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="dropdown-item" to="/appointments/new">
-                    Create Appointment
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="dropdown-item" to="/appointments/history">
-                    Appointment History
+                  <Link className="dropdown-item" to="/salesperson/history">
+                    Salesperson History
                   </Link>
                 </li>
               </ul>
             </li>
             <li>
               <Link className="nav-link" to="/customer">
-                Add Customer
-              </Link>
-            </li>
-            <li>
-              <Link className="nav-link" to="/technician">
-                Add Technician
+                Add Potential Customer
               </Link>
             </li>
           </ul>

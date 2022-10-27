@@ -7,6 +7,7 @@ function MainPage() {
           The premiere solution for automobile dealership
           management, set services, account sales, and much more!
         </p>
+        <img src= "https://illustoon.com/photo/1776.png" alt="carcarlogo"></img>
       </div>
       <footer>Made using JavaScript, Python, HTML, and CSS
               Created by Tanner Halsey and Esteban Chirnois

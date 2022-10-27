@@ -15,8 +15,8 @@ class InventoryList extends React.Component {
         }
     }
 
-    async deleteinventory(inventory) {
-        const deleteURL = `http://localhost:8100/api/automobiles/${inventory.VIN}/`
+    async deleteinventory(inventory, automobiles) {
+        const deleteURL = `http://localhost:8100/api/automobiles/${inventory.vin}/`
         const fetchConfig = {
             method: "delete"
         }
@@ -49,7 +49,7 @@ class InventoryList extends React.Component {
                                 <td>{inventories.year}</td>
                                 <td>{inventories.vin}</td>
                                 <td>{inventories.model.name}</td>
-                                <td><button className="btn btn-danger" onClick={() => this.deleteinventory(inventories)}>Delete</button></td>
+                                <td><button className="btn btn-danger" onClick={() => this.deleteinventory(inventories)}>Remove from Inventory</button></td>
                             </tr>
                         )
                     })}

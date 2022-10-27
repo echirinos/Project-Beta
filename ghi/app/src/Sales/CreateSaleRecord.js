@@ -84,6 +84,49 @@ class CreateSalesRecord extends React.Component {
     }
   }
 
+
+
+  async handleSubmit(e) {
+    e.preventDefault();
+
+    const data = {...this.state};
+    delete data.customers
+    delete data.salespersons
+    delete data.autos
+
+    const URL = 'http://localhost:8090/api/salesrecords/';
+    const fetchConfig = {
+      method: "post",
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    };
+
+    const response = await fetch(URL, fetchConfig)
+
+    if (response.ok) {
+        const deleteURL = `http://localhost:8100/api/automobiles/${this.state.automobile}`
+        const fetchConfig = {
+            method: "delete"
+        }
+        await fetch(deleteURL, fetchConfig)
+
+        const filtered_state = this.state.autos.filter(auto => auto.vin === this.state.automobile)
+        this.setState({autos: filtered_state})
+    }
+    if (response.ok)  {
+        const cleared = {
+            sale_price: "",
+            salesperson: "",
+            customer: "",
+            automobile: "",
+        };
+
+      this.setState(cleared);
+    }
+  }
+
   render() {
     return (
       <div className="row">
