@@ -1,5 +1,12 @@
 import React from 'react';
+/*
+You need to create a form that allows a service concierge to enter the VIN of the vehicle,
+the name of the person to whom the vehicle belongs, the date and time of the appointment,
+the assigned technician, and a reason for the service appointment (like "oil change" or "routine maintenance").
+When the form is submitted, the service appointment should be saved in the application.
 
+You need to create a link in the navbar to get to the Enter a service appointment form.
+*/
 class AppointmentForm extends React.Component {
     constructor() {
         super();

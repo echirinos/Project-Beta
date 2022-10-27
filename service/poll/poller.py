@@ -9,8 +9,7 @@ sys.path.append("")
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "service_project.settings")
 django.setup()
 
-# Import models from service_rest, here.
-# from service_rest.models import Something
+# Import error is now fixed
 from service_rest.models import AutomobileVO
 
 
@@ -24,7 +23,7 @@ def get_autos():
             defaults={"vin": auto["vin"]}
         )
 
-
+# you can check this is on the docker cli for the polling
 def poll():
     while True:
         print('Service poller polling for data')

@@ -8,7 +8,7 @@ from django.views.decorators.http import require_http_methods
 from common.json import ModelEncoder
 from .models import AutomobileVO, Technician, ServiceAppointment
 
-
+#creating technician encoder with its properties that we made in model
 class TechnicianEncoder(ModelEncoder):
     model = Technician
     properties = [
@@ -16,7 +16,7 @@ class TechnicianEncoder(ModelEncoder):
         "employee_number"
     ]
 
-
+#creating service appointment encoder with its properties that we made in model
 class ServiceAppointmentEncoder(ModelEncoder):
     model = ServiceAppointment
     properties = [
@@ -33,7 +33,7 @@ class ServiceAppointmentEncoder(ModelEncoder):
         "assigned_technician": TechnicianEncoder()
     }
 
-
+#get/post for technician
 @require_http_methods(["GET", "POST"])
 def api_technicians(request):
     if request.method == "GET":
@@ -62,7 +62,7 @@ def api_technicians(request):
                 status=500
             )
 
-
+#get technician detail
 @require_http_methods("GET")
 def api_technician_detail(request, employee_number):
     try:
@@ -78,7 +78,7 @@ def api_technician_detail(request, employee_number):
             status=404
         )
 
-
+#allows a service concierge to enter the VIN of the vehicle, the name of the person to whom the vehicle belongs, the date and time of the appointment, the assigned technician, and a reason for the service appointment (like "oil change" or "routine maintenance"). When the form is submitted, the service appointment should be saved in the application.
 @require_http_methods(["GET", "POST"])
 def api_appointments(request):
     if request.method == "GET":
@@ -95,13 +95,6 @@ def api_appointments(request):
         assigned_technician = Technician.objects.get(employee_number=technician_number)
         content["assigned_technician"] = assigned_technician
 
-        # AutomobileVO will store all cars that were _ever_ in
-        # inventory, as the poller uses
-        # AutomobileVO.objects.update_or_create()
-        # and doesn't delete its own automobile when one is deleted
-        # in the Inventory service.
-        # This is intentional because it makes determining appointment
-        # VIP status straightforward.
         try:
             vin_in_inventory = AutomobileVO.objects.get(vin=vin)
         except AutomobileVO.DoesNotExist:
@@ -119,7 +112,7 @@ def api_appointments(request):
             safe=False
         )
 
-
+#allows get/put/delete for appointments
 @require_http_methods(["GET", "PUT", "DELETE"])
 def api_appointment_detail(request, pk):
     if request.method == "GET":
