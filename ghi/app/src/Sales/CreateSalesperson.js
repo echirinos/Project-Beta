@@ -39,7 +39,7 @@ class CreateSalesperson extends React.Component {
         event.preventDefault();
 
         const data = { ...this.state }
-        data.employee_number = data.employeeNumber
+        data.employeeNumber = data.employeeNumber
         delete data.salespersons;
         delete data.employeeNumber
         delete data.alertClass

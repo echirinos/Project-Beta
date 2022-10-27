@@ -14,7 +14,7 @@ function TableStatusMessage(props) {
     // Initial page state, before user interaction.
     if (!hasSearched && displayAppointmentsLength === 0) {
         return (
-            <h3 className="text-center">Input a valid VIN to view its service history</h3>
+            <h3 className="text-center">Input a valid VIN on the search bar in the top right of the screen to view its service history</h3>
         )
     }
 
@@ -90,8 +90,8 @@ class AppointmentHistory extends React.Component {
                         <tr>
                             <th>VIN</th>
                             <th>Customer name</th>
-                            <th>Date</th>
-                            <th>Assigned Technician</th>
+                            <th>Date/Time</th>
+                            <th>Technician</th>
                             <th>Reason</th>
                         </tr>
                     </thead>

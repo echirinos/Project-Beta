@@ -73,7 +73,7 @@ class AppointmentList extends React.Component {
                             <th>Appointment Date</th>
                             <th>VIP Status</th>
                             <th>Reason</th>
-                            <th>Assigned Technician</th>
+                            <th>Technician</th>
                         </tr>
                     </thead>
                     <tbody>

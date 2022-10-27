@@ -45,14 +45,16 @@ class SalesHistoryList extends React.Component {
             this.setState({ allSales: data.salesrecords })
         }
     }
-
+//update state function to update the state of your component
+// according to the value from event.target.value property.
 
     handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
-
+//handleX is what you name the function that you pass to the onX prop.
+//preventdefault makes you choose value
     handleSubmit(e) {
         e.preventDefault();
         const filteredSales = this.state.allSales.filter(sale => sale.salesperson.employee_number === this.state.searchSalesperson);
