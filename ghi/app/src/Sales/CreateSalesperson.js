@@ -92,7 +92,7 @@ class CreateSalesperson extends React.Component {
                 <label htmlFor="year">Employee Number</label>
               </div>
               <div className={this.state.alertClass} role="alert">
-                Could not add employee. Check if employee number is unique.
+                Make sure the employee number is unique.
               </div>
               <button className="btn btn-primary">Create</button>
             </form>
