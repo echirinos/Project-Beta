@@ -36,9 +36,16 @@ docker-compose up
 
 6.  Make sure your docker desktop looks like [this](https://drive.google.com/file/d/16Mf0BLF5FZMxVGXA-rUkZNqU9ok-igFL/view). If not all your docker containers are running make sure you're using the most recent version of Python, and refer back to the error message. Or you can specifically view which container is giving you an issue and further diagnose inside the container's terminal.
 
-7. Go to your browser and go to [localhost:3000](localhost:3000)
+7. Make sure to run migrations on the `sales-api-1` [container](https://drive.google.com/file/d/16Mf0BLF5FZMxVGXA-rUkZNqU9ok-igFL/view). You do that by going inside the terminal of the `sales-api-1` container terminal. One your're inside the CLI/Terminal you run these commands
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+It should look like [this](https://drive.google.com/file/d/11Q7vLRhA5_Q-ovDWXQeiBQ4jwXEyVrN-/view?usp=sharing).
 
-8. Congratulations you have successfully booted up CarBook, enjoy!
+8. Go to your browser and go to [localhost:3000](localhost:3000)
+
+9. Congratulations you have successfully booted up CarBook, enjoy!
 
 ### Prerequisites
 
@@ -143,7 +150,7 @@ The Sales model has price as a float field to enter in a dolar amount. The Sales
 
 views______
 
-##need 
+##need
 list_salesrecords(GET POST)
 
 show_salesrecord(DELETE GET)
