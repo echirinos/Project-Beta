@@ -40,7 +40,6 @@ class ManufacturerCreate extends React.Component {
         }
         const response = await fetch(manufacturerURL, fetchConfig)
         if (response.ok) {
-            const newManufacturer = await response.json()
             const cleared = {
                 name: ''
             }

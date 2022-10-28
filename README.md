@@ -34,9 +34,9 @@ docker-compose build
 docker-compose up
 ```
 
-6.  Make sure your docker desktop looks like [this](https://drive.google.com/file/d/16Mf0BLF5FZMxVGXA-rUkZNqU9ok-igFL/view). If not all your docker containers are running make sure you're using the most recent version of Python, and refer back to the error message. Or you can specifically view which container is giving you an issue and further diagnose inside the container's terminal.
+6.  Make sure your docker desktop looks like [this](https://drive.google.com/file/d/16Mf0BLF5FZMxVGXA-rUkZNqU9ok-igFL/view). If not all your docker containers are running make sure you're using the most recent version of Python and refer back to the error message. Or, you can specifically view which container is giving you an issue and further diagnose inside the container's terminal.
 
-7. Make sure to run migrations on the `sales-api-1` [container](https://drive.google.com/file/d/16Mf0BLF5FZMxVGXA-rUkZNqU9ok-igFL/view). You do that by going inside the terminal of the `sales-api-1` container terminal. One your're inside the CLI/Terminal you run these commands
+7. **Important**: Make sure to run migrations on the `sales-api-1` [container](https://drive.google.com/file/d/16Mf0BLF5FZMxVGXA-rUkZNqU9ok-igFL/view). You do that by going inside the terminal of the `sales-api-1` container terminal. Once you're inside the CLI/Terminal you run these commands
 ```
 python manage.py makemigrations
 python manage.py migrate
@@ -95,36 +95,35 @@ ______________________________________________________________
 
 ## Design
 
-Our [Excalidraw](https://drive.google.com/file/d/1URAbxlryy4x5LMNdytwI2kfxbiUaDU0l/view?usp=sharing)
-shows the DOM and aggregate/aggregate root.
+Our [Excalidraw](https://drive.google.com/file/d/1URAbxlryy4x5LMNdytwI2kfxbiUaDU0l/view?usp=sharing) shows the DOM and aggregate/aggregate root.
 
 ## Service microservice
 
-Technician: Created a form that allows a person to enter an automotive technician's name and employee number. When the form is submitted, the automotive technician is created in the application.
-ServiceAppointment: Created a form that allows a service concierge to enter the VIN of the vehicle, the name of the person to whom the vehicle belongs, the date and time of the appointment, the assigned technician, and a reason for the service appointment (like "oil change" or "routine maintenance"). As well as VIP statuses for individuals that the service microservice needs.
-AutomobileVO: Stores all automobiles that were ever in Inventory as value objects, including automobiles that have been sold
-Integration: The Service microservice has an appointment form to create a service. It also has a form to create a new technician with their name and employee number. The appointment form goes into a list where you can cancel the service appointment to get them off the list and complete the service appointment.
+- Technician: Created a form that allows a person to enter an automotive technician's name and employee number. When the form is submitted, the automotive technician is created in the application.
+- ServiceAppointment: Created a form that allows a service concierge to enter the VIN of the vehicle, the name of the person to whom the vehicle belongs, the date and time of the appointment, the assigned technician, and a reason for the service appointment (like "oil change" or "routine maintenance"). As well as VIP statuses for individuals that the service microservice needs.
+- AutomobileVO: Stores all automobiles that were ever in Inventory as value objects, including automobiles that have been sold
+- Integration: The Service microservice has an appointment form to create a service. It also has a form to create a new technician with their name and employee number. The appointment form goes into a list where you can cancel the service appointment to get them off the list and complete the service appointment.
 
 ## Sales microservice
 
 React Forms Broken into folders:
 
-*Inventory
+- Inventory
     -InventoryForm
     -InventoryList
 
-*Manufacturers
+- Manufacturers
     -ManufacturersCreate
     -ManufacturersList
 
-*Sales
+- Sales
     -CreateCustomer
     -CreateSalesRecord
     -CreateSalesperson
     -ListSalesHistory
     -SalesList
 
-*Services
+- Services
     *ServiceAppointment
         -AppointmentForm
         -AppointmentHistory
@@ -132,7 +131,7 @@ React Forms Broken into folders:
     *Technicians
         -TechnicianForm
 
-*VehicleModels
+- VehicleModels
     -VehicleModelForm
     -VehicleModelList
 
@@ -164,5 +163,8 @@ list_customer(GET POST)
 show_potential(DELETE GET)
 ???
 
-TO FUTURE TANNER ADD DATE PROPERTY TO SALES RECORD TO LIST DATE CAR SOLD
+## Future Improvements
+
+- TO FUTURE TANNER ADD DATE PROPERTY TO SALES RECORD TO LIST DATE CAR SOLD
 CHANGE FAVICON ICON
+- Fix step 7 in the "Getting Started" section, that way we don't have to migrate everytime we start up the app.
