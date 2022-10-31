@@ -97,7 +97,7 @@ function Nav() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Automobile Service
+                 Service...
               </Link>
               <ul
                 className="dropdown-menu dropdown-menu"
@@ -110,12 +110,12 @@ function Nav() {
                 </li>
                 <li className="nav-item">
                   <Link className="dropdown-item" to="/appointments/new">
-                    Create Service Appointment
+                    Create Appointment
                   </Link>
                 </li>                
                 <li className="nav-item">
                   <Link className="dropdown-item" to="/appointments">
-                    List Service Appointments
+                    List Appointments
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -135,7 +135,7 @@ function Nav() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Salespeople
+                Sales...
               </Link>
               <ul
                 className="dropdown-menu dropdown-menu"
