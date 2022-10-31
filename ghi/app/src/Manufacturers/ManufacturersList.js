@@ -26,23 +26,7 @@ class ManufacturersList extends React.Component {
         const updated_manufacturers = [...this.state.manufacturers]
         updated_manufacturers.splice(id, 1)
         this.setState({ manufacturers: updated_manufacturers })
-    }
-
-    
-    
-    // async function deletemanufacturers(manufacturers){
-    //     const response = await fetch `http://localhost:8100/api/manufacturers/${manufacturers.id}/`, { method: "delete" })
-    //     if (response.ok) {
-    //      const idx = manufacturer.indexOf(manufacturers)
-    //      const updated_manufacturers = [...manufacturers]
-    //      updated_manufacturers.splice(idx, 1)
-    //      setmanufacturers(updated_manufacturers)
-    //    }
-    // }
-    
-    
-    
-    
+    }    
 
     render() {
         return (
