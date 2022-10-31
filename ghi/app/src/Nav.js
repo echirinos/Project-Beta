@@ -30,20 +30,25 @@ function Nav() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Manufacturers
+                Add to...
               </Link>
               <ul
                 className="dropdown-menu dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li className="nav-item">
-                  <Link className="dropdown-item" to="/manufacturers">
-                    List Manufacturers
+                  <Link className="dropdown-item" to="/manufacturers/new">
+                    Manufacturers
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="dropdown-item" to="/manufacturers/new">
-                    Add a Manufacturer
+                  <Link className="dropdown-item" to="/vehicle-models/new">
+                    Models
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="dropdown-item" to="/inventory/new">
+                    Inventory
                   </Link>
                 </li>
               </ul>
@@ -58,48 +63,26 @@ function Nav() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Vehicle Models
+                List Current...
               </Link>
               <ul
                 className="dropdown-menu dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
+              
                 <li className="nav-item">
                   <Link className="dropdown-item" to="/vehicle-models">
-                    List Vehicle Models
+                     Models
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="dropdown-item" to="/vehicle-models/new">
-                    Add a Vehicle Model
+                  <Link className="dropdown-item" to="/manufacturers">
+                     Manufacturers
                   </Link>
                 </li>
-              </ul>
-            </li>
-            {/* Inventory dropdown links */}
-            <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="/inventory"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Inventory
-              </Link>
-              <ul
-                className="dropdown-menu dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
                 <li className="nav-item">
                   <Link className="dropdown-item" to="/inventory">
-                    List all Inventory
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="dropdown-item" to="/inventory/new">
-                    Add to Inventory
+                     Inventory
                   </Link>
                 </li>
               </ul>
